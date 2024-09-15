@@ -25,3 +25,25 @@ body {
     text-wrap: balance;
   }
 }
+
+.sidebar-button {
+  background-color: #d79300; /* Orange background */
+  color: white; /* White text */
+  border: 2px solid #d79300; /* Orange border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+  display: inline-block; /* Inline-block for better alignment */
+}
+
+.sidebar-button:hover {
+  background-color: #ab7500; /* Darker orange on hover */
+}
+
+.sidebar-button:active {
+  background-color: #815901; /* Even darker orange when clicked */
+}
+
