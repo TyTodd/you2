@@ -27,9 +27,9 @@ body {
 }
 
 .sidebar-button {
-  background-color: #d79300; /* Orange background */
+  /* background-color: #d79300; Orange background */
   color: white; /* White text */
-  border: 2px solid #d79300; /* Orange border */
+  /* border: 2px solid #d79300; Orange border */
   border-radius: 5px; /* Rounded corners */
   padding: 10px 20px; /* Padding */
   font-size: 16px; /* Font size */
@@ -38,7 +38,9 @@ body {
   transition: background-color 0.3s ease; /* Smooth color transition */
   display: inline-block; /* Inline-block for better alignment */
   margin-bottom: 5px;
-  /* max-width: 90%; */
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
   text-align: center;
 }
 
@@ -51,9 +53,9 @@ body {
 }
 
 .side-menu {
-  /* background-color: grey; */
+  background-color: rgb(98, 47, 3); 
   height: auto;
-  width: 15%;
+  width: 17%;
 }
 
 .page {
@@ -71,7 +73,7 @@ body {
 }
 
 .chatBot {
-  width: 50%;
+  width: 60%;
   margin: auto;
   position: absolute;
   top: 50%;
