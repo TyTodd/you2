@@ -7,8 +7,9 @@ let messages = [
 ];
 require("dotenv").config();
 const api_key = process.env.TUNE_API_KEY;
-const model = "santi/ty2-model-kvcgd2dc";
+// const model = "santi/ty2-model-kvcgd2dc";
 // const model = "Tytodd/ty2-1";
+const model = "santi/ty3-model-mylzbkfs";
 export default async function handler(req, res) {
   // Check if the request method is GET
   if (req.method === "POST") {
