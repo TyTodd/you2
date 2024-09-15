@@ -9,7 +9,6 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs';
-import FileUpload from './Upload_file_frontend';
 
 
 const geistSans = localFont({
@@ -42,7 +41,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-// function upload_file() {}
+// function FileUpload() {}
 
 export default function RootLayout({
   children,
@@ -52,7 +51,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <div>
           <aside className="sidebar">
-            <button className="sidebar-button" onClick={FileUpload}> Upload your Instagram Data!</button>
+            
+            <button className="sidebar-button" > Upload your Instagram Data!</button>
         </aside></div>
       <AuthProvider>
           {children}
