@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -7,9 +6,8 @@ import {
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
-} from '@clerk/nextjs';
-
+  UserButton,
+} from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,33 +28,43 @@ export const metadata: Metadata = {
 function AuthProvider({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-      {children}
+      <div className="page">
+        <div className="side-menu">
+          <button className="sidebar-button">
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </button>
+          <label htmlFor="file-upload" className="sidebar-button">
+            Upload Instagram Data
+          </label>
+          <input type="file" id="file-upload" />
+          <button className="sidebar-button"> Connect to gmail</button>
+          <a href="/example">
+            <button className="sidebar-button"> Add example</button>
+          </a>
+          <a href="/">
+            <button className="sidebar-button">Home</button>
+          </a>
+        </div>
+        {children}
+      </div>
     </ClerkProvider>
   );
 }
-
-// function FileUpload() {}
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <div>
-          <aside className="sidebar">
-            
-            <button className="sidebar-button" > Upload your Instagram Data!</button>
-        </aside></div>
-      <AuthProvider>
-          {children}
-      </AuthProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
