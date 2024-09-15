@@ -71,12 +71,12 @@ async function authorize() {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 
-
 async function listOfMessages(auth) {
   const gmail = google.gmail({version: 'v1', auth});
   const lol = await gmail.users.messages.list({
     userId: 'me',
-    labelIds: ['SENT',]
+    labelIds: ['SENT',],
+    maxResults: 500
   })
   const messages = lol.data.messages;
   async function processArray(array) {
@@ -86,15 +86,13 @@ async function listOfMessages(auth) {
         userId: 'me',
         id: item.id,
       });
-      new_arr.push(m.data.payload.parts[0].body.data)
+      if (typeof m.data.payload.parts[0].body.data !== 'undefined')
+      {
+      new_arr.push(m.data.payload.parts[0].body.data)}
     }
     return new_arr
   }
-  console.log('Messages:');
   const message_list = await (processArray(messages))
-  message_list.forEach( (message) => {
-    console.log(`${message}`);
-  })
   return message_list
 }
 
