@@ -1,23 +1,17 @@
-## Editing the LLM to Santis model
+# TuneHQ AI-Powered Date Matching
 
-Go to `src/pages/api/message.js` to edit the LLM. At the top you should see this:
+This project uses the TuneHQ LLM to provide AI-driven date matching based on compatibility assessments. The app analyzes user profiles to suggest compatible matches and provides AI-generated guided messaging to help users initiate and maintain engaging conversations.
 
-```
-const model = "Tytodd/ty2-1";
-```
+---
 
-change model to the name of the model you want to use. In tune studio there is a get code button use that to get the model name.
+## Editing the LLM to Santis Model
 
-Next go to `.env` and ` .env.local` and change the `TUNE_API_KEY` to your key.
+To switch the AI model used in the app, follow these steps:
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+1. **Edit the model in the API:**
 
-## Getting Started
+   Go to `src/pages/api/message.js` and find the following line at the top:
 
-First, run the development server:
+   ```javascript
+   const model = "Tytodd/ty2-1";
 
-```bash
-npm run dev
-# or
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
